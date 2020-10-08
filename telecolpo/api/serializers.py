@@ -1,7 +1,17 @@
+
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
 from .models import Study
+
+
+class StringArrayField(serializers.Field):
+
+    def to_representation(self, value):
+        return value.split('|')
+
+    def to_internal_value(self, data):
+        return '|'.join(data)
 
 
 class NestedPatientSerializer(serializers.Serializer):
@@ -16,7 +26,7 @@ class NestedClinicHistorySerializer(serializers.Serializer):
     papEnable = serializers.BooleanField()
     pap = serializers.CharField()
     ivaa = serializers.CharField()
-    diagnosis = serializers.CharField()
+    diagnosis = StringArrayField()
     notes = serializers.CharField()
     diagram = serializers.CharField()
 
@@ -24,7 +34,7 @@ class NestedClinicHistorySerializer(serializers.Serializer):
 class NestedSurveySerializer(serializers.Serializer):
     max_tries = serializers.CharField()
     good_photo = serializers.BooleanField()
-    bad_photo_reasons = serializers.CharField()
+    bad_photo_reasons = StringArrayField()
 
 
 class StudySerializer(serializers.ModelSerializer):
