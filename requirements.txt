@@ -7,4 +7,5 @@ gunicorn==20.0.4
 PyJWT==1.7.1
 python-dotenv==0.14.0
 pytz==2020.1
+psycopg2==2.7.7
 sqlparse==0.4.0
