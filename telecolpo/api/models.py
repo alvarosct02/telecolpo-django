@@ -21,9 +21,9 @@ class Study(models.Model):
     good_photo = models.BooleanField()
     bad_photo_reasons = models.CharField(max_length=200)
 
-    created_at = models.DateTimeField(max_length=200)
-    submitted_at = models.DateTimeField(max_length=200)
+    created_at = models.CharField(max_length=200)
+    submitted_at = models.CharField(max_length=200)
     status = models.CharField(max_length=200)
-    read = models.CharField(max_length=200)
+    read = models.BooleanField()
 
 
