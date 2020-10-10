@@ -26,7 +26,9 @@ SECRET_KEY = 'jqr5h@@chdv3(k1l5n&ht5iw_2-jalz*qd28bbon1m2#3wosze'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '0.0.0.0',
     '10.0.2.2',
+    'cryptic-crag-41581.herokuapp.com',
     'localhost',
     '127.0.0.1',
 ]
