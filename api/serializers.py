@@ -27,7 +27,7 @@ class NestedClinicHistorySerializer(serializers.Serializer):
     pap = serializers.CharField(required=False, allow_blank=True)
     ivaa = serializers.CharField()
     diagnosis = StringArrayField()
-    notes = serializers.CharField()
+    notes = serializers.CharField(required=False, allow_blank=True)
     diagram = serializers.CharField(required=False, allow_blank=True)
 
 
